@@ -79,10 +79,14 @@ find_package(ITK COMPONENTS
   ITKTransform
   ITKV3Compatibility
   ITKVTK
-  ITKVtkGlue
   ${ITK_IO_MODULES_USED}
-  REQUIRED
-)
+  )
+if(USE_BRAINSConstellationDetector OR USE_ConvertBetweenFileFormats)
+  list(APPEND ${PROJECT_NAME}_ITK_COMPONENTS
+    ITKVtkGlue
+    )
+endif()
+find_package(ITK COMPONENTS ${${PROJECT_NAME}_ITK_COMPONENTS} REQUIRED)
 if(Slicer_BUILD_BRAINSTOOLS)
   set(ITK_NO_IO_FACTORY_REGISTER_MANAGER 1)
 endif()
