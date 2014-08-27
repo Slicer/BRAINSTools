@@ -13,9 +13,6 @@
     set(QT_LIBRARIES ${QT_QT_LIBRARY})
   endif()
 
-  FindVTKUtil(vtkRenderingFreeType vtkRenderingOpenGL vtkInteractionStyle
-    vtkImagingSources vtkGUISupportQt)
-
   set( BRAINSConstellationDetectorGUI_SRC
    QSliceViewer.cxx
   QLabelList.cxx
