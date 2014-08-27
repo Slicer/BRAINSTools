@@ -1,9 +1,3 @@
-FindVTKUtil(vtkIOLegacy
-  vtkIOXML
-  vtkCommonDataModel
-  vtkFiltersCore
-  vtkFiltersGeneral)
-
 option(DEBUGGING_PRINT_IMAGES "Use the DEBUG_IMAGE_VIEWER for debugging" ON)
 ### A local macro for configuring all these programs consistantly for the different platforms.
 ###
@@ -40,7 +34,7 @@ set(ALL_PROGS_LIST
 #  gtractGraphSearchTracking
   )
 foreach(prog ${ALL_PROGS_LIST})
-  StandardBRAINSBuildMacro(NAME ${prog} TARGET_LIBRARIES GTRACTCommon BRAINSCommonLib ${VTK_LIBRARIES})
+  StandardBRAINSBuildMacro(NAME ${prog} TARGET_LIBRARIES GTRACTCommon BRAINSCommonLib)
 endforeach()
 
 

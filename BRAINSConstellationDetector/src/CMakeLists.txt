@@ -41,5 +41,5 @@ set(ALL_PROGS_LIST
   BRAINSConstellationLandmarksTransform
   )
 foreach(prog ${ALL_PROGS_LIST})
-  StandardBRAINSBuildMacro(NAME ${prog} TARGET_LIBRARIES landmarksConstellationCOMMONLIB ${VTK_LIBRARIES})
+  StandardBRAINSBuildMacro(NAME ${prog} TARGET_LIBRARIES landmarksConstellationCOMMONLIB )
 endforeach()

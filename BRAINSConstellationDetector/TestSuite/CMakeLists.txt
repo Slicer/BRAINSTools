@@ -5,8 +5,7 @@ file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 ## Test landmarksConstellationTrainingDefinitionIO
 ##
 add_executable(TestlandmarksConstellationTrainingDefinitionIO TestlandmarksConstellationTrainingDefinitionIO.cxx)
-target_link_libraries(TestlandmarksConstellationTrainingDefinitionIO BRAINSCommonLib ${ITK_LIBRARIES}
-  ${VTK_LIBRARIES})
+target_link_libraries(TestlandmarksConstellationTrainingDefinitionIO BRAINSCommonLib ${ITK_LIBRARIES})
 
 set(ALL_TEST_PROGS
   BRAINSAlignMSP
@@ -21,7 +20,7 @@ set(ALL_TEST_PROGS
   )
 
 foreach(testprog ${ALL_TEST_PROGS})
-  MakeTestDriverFromSEMTool(${testprog} ${testprog}Test.cxx ${VTK_LIBRARIES})
+  MakeTestDriverFromSEMTool(${testprog} ${testprog}Test.cxx)
 endforeach()
 
 set(ALL_PROGS_LIST
@@ -30,8 +29,7 @@ set(ALL_PROGS_LIST
 
 ## Simple CLP programs without TestDriver wrappers
 foreach(prog ${ALL_PROGS_LIST})
-  StandardBRAINSBuildMacro(NAME ${prog}
-    TARGET_LIBRARIES landmarksConstellationCOMMONLIB BRAINSCommonLib ${VTK_LIBRARIES})
+  StandardBRAINSBuildMacro(NAME ${prog} TARGET_LIBRARIES landmarksConstellationCOMMONLIB BRAINSCommonLib )
 endforeach()
 
 if( ${BRAINSTools_MAX_TEST_LEVEL} GREATER 8) # This should be restored after fixing.
