@@ -20,7 +20,6 @@
 #define _GenericTransformImage_hxx_
 
 #include <iostream>
-#include "BRAINSFitUtils.h"
 #include "GenericTransformImage.h"
 #include "itkResampleInPlaceImageFilter.h"
 #include "itkConstantBoundaryCondition.h"
@@ -341,7 +340,7 @@ typename OutputImageType::Pointer GenericTransformImage(
                   << "but the input composite transform consists of more than one transfrom." << std::endl;
         }
       // extract the included linear rigid transform from the input composite
-      // VersorRigid3DTransformType declared in BRAINSFitUtils.h
+      typedef itk::VersorRigid3DTransform<double>    VersorRigid3DTransformType;
       const VersorRigid3DTransformType::ConstPointer tempInitializerITKTransform =
         dynamic_cast<VersorRigid3DTransformType const *>( genericCompositeTransform->GetNthTransform(0).GetPointer() );
       if( tempInitializerITKTransform.IsNull() )

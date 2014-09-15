@@ -1176,7 +1176,7 @@ BRAINSFitHelperTemplate<FixedImageType, MovingImageType>::Update(void)
       {
       const unsigned int SpaceDimension = 3;
       const unsigned int SplineOrder = 3;
-      // BSplineTransformType declated in BRAINSFitUtils.h
+      typedef itk::BSplineTransform<double, SpaceDimension, SplineOrder> BSplineTransformType;
 
       typedef itk::ImageRegistrationMethodv4<FixedImageType, MovingImageType> BSplineRegistrationType;
       typename BSplineRegistrationType::Pointer bsplineRegistration = BSplineRegistrationType::New();
