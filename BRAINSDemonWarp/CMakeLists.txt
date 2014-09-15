@@ -27,8 +27,6 @@ findITKUtil(ITKDisplacementField
   ITKDeprecated
   ITKV3Compatibility)
 
-FindVTKUtil(vtkRenderingFreeType)
-
 #-----------------------------------------------------------------------------
 # Output directories.
 #
