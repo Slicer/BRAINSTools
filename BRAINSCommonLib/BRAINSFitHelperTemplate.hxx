@@ -1175,7 +1175,6 @@ BRAINSFitHelperTemplate<FixedImageType, MovingImageType>::Update(void)
     else if( currentTransformType == "BSpline" )
       {
       const unsigned int SpaceDimension = 3;
-      const unsigned int SplineOrder = 3;
       // BSplineTransformType declated in BRAINSFitUtils.h
 
       typedef itk::ImageRegistrationMethodv4<FixedImageType, MovingImageType> BSplineRegistrationType;
