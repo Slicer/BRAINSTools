@@ -8,7 +8,8 @@
 #
 # ITK
 #
-FindITKUtil(ITKDeprecated
+FindITKUtil(
+  # ITKDeprecated
   ITKImageCompare
   ITKImageFilterBase
   ITKImageGrid

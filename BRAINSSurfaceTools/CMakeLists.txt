@@ -6,7 +6,7 @@
 # ITK
 #
 FindITKUtil(
-  ITKDeprecated
+  # ITKDeprecated
   ITKQuadEdgeMesh
   ITKOptimizers
   ITKQuadEdgeMeshFiltering

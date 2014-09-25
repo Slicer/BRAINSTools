@@ -8,7 +8,8 @@ project( GTRACT )
 #
 # ITK
 #
-FindITKUtil(ITKDeprecated
+FindITKUtil(
+  # ITKDeprecated
   ITKOptimizersv4
   ITKMetricsv4
   ITKRegistrationMethodsv4

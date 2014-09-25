@@ -24,7 +24,7 @@ findITKUtil(ITKDisplacementField
   ITKSmoothing
   ITKSpatialObjects
   ITKTransform
-  ITKDeprecated
+  # ITKDeprecated
   ITKV3Compatibility)
 
 #-----------------------------------------------------------------------------

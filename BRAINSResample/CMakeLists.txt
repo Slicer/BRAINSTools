@@ -9,7 +9,7 @@
 # ITK
 #
 FindITKUtil(ITKDisplacementField
-  ITKDeprecated
+  # ITKDeprecated
   ITKDistanceMap
   ITKImageFunction
   ITKImageGrid
