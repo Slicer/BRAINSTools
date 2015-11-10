@@ -42,7 +42,7 @@ set(ALL_PROGS_LIST
 set(BRAINSFitLibraries BRAINSCommonLib ${ANTS_LIBS} ${BRAINSFit_ITK_LIBRARIES})
 DebugImageViewerLibAdditions(BRAINSFitLibraries)
 foreach(prog ${ALL_PROGS_LIST})
-  StandardBRAINSBuildMacro(NAME ${prog} TARGET_LIBRARIES ${BRAINSFitLibraries})
+  StandardBRAINSBuildMacro(NAME ${prog} TARGET_LIBRARIES ${BRAINSFitLibraries} EXECUTABLE_ONLY)
 endforeach()
 
 if(BUILD_TESTING AND NOT BRAINSTools_DISABLE_TESTING)
