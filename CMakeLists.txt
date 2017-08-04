@@ -7,9 +7,6 @@ endif()
 if(POLICY CMP0048)
   cmake_policy(SET CMP0048 OLD) #OLD project() behavior for setting VERSION variable
 endif()
-if(POLICY CMP0017)
-  cmake_policy(SET CMP0017 OLD) #Prefer files from the CMake module directory when including from there
-endif()
 foreach(p
   CMP0054 # CMake 3.1 Only interpret ``if()`` arguments as variables or keywords when unquoted.
 #  CMP0042 # ``MACOSX_RPATH`` is enabled by default.
