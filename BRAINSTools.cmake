@@ -168,6 +168,13 @@ include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}/BRAINSCommonLib)
 
 #-----------------------------------------------------------------------------
+# Set Launcher to support integration with Slicer
+#-----------------------------------------------------------------------------
+if(DEFINED SEM_LAUNCH_COMMAND)
+  set(LAUNCH_EXE ${SEM_LAUNCH_COMMAND})
+endif()
+
+#-----------------------------------------------------------------------------
 # Define list of module names
 #-----------------------------------------------------------------------------
 set(brains_modulenames
