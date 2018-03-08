@@ -14,6 +14,7 @@ set(ExternalData_LINK_CONTENT MD5)
 set(ExternalData_SOURCE_ROOT ${${PROJECT_NAME}_SOURCE_DIR})
 include(ExternalData)
 
+set(MODULE_FOLDER "Module-ReferenceAtlas")
 
 #
 # In order to test need an XML file
@@ -50,6 +51,7 @@ macro(DownloadAndInstallRules UNIQUE_TARGET_NAME GLOBPAT INSTDEST)
   endforeach(CurrentMD5Reference ${AtlasImageFilesMD5Names})
   #message(STATUS "XXXXX\n${AtlasImageFiles}\nZZZZZZZ")
   add_custom_target(${UNIQUE_TARGET_NAME} DEPENDS ${AtlasImageFiles})
+  set_target_properties(${UNIQUE_TARGET_NAME} PROPERTIES FOLDER ${MODULE_FOLDER})
 
 endmacro()
 
@@ -70,5 +72,6 @@ DownloadAndInstallRules(AtlasT1Only  "${CMAKE_CURRENT_SOURCE_DIR}/T1OnlyModels/*
 add_custom_target(InstallReferenceAtlas
                   DEPENDS AtlasNIFTI AtlasNRRD AtlasTxt AtlasCtbl AtlasFcsv AtlasCsv AtlasModels AtlasProb AtlasSpatial
                           AtlasSurface AtlasBCD AtlasT1Only)
+set_target_properties(InstallReferenceAtlas PROPERTIES FOLDER ${MODULE_FOLDER})
 
 ExternalData_add_target( ${PROJECT_NAME}FetchData )  # Name of data management target
