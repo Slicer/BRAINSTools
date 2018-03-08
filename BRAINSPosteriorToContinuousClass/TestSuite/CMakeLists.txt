@@ -5,7 +5,7 @@ include_directories(
 MakeTestDriverFromSEMTool(BRAINSPosteriorToContinuousClass BRAINSPosteriorToContinuousClassTest.cxx)
 
 set(BRAINSPosteriorToContinuousClassTestName BRAINSPosteriorToContinuousClassTest)
-ExternalData_add_test( ${PROJECT_NAME}FetchData NAME ${BRAINSPosteriorToContinuousClassTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${BRAINSPosteriorToContinuousClassTestName}
   COMMAND ${LAUNCH_EXE} $<TARGET_FILE:BRAINSPosteriorToContinuousClass>
   --compare DATA{${TestData_DIR}/${BRAINSPosteriorToContinuousClassTestName}.result.nii.gz}
             ${CMAKE_CURRENT_BINARY_DIR}/${BRAINSPosteriorToContinuousClassTestName}.output.nii.gz

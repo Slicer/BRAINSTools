@@ -212,3 +212,9 @@ if(ITK_LEGACY_REMOVE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CXX_RELEASE_DESIRED_FLAGS} " )
   endif()
 endif()
+
+#-------------------------------------------------------------------------
+if(NOT DEFINED BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET)
+  set(BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET "$${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET}")
+endif()
+mark_as_superbuild(BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET:STRING)

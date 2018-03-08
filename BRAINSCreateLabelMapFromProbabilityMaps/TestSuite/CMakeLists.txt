@@ -4,7 +4,7 @@ MakeTestDriverFromSEMTool(BRAINSCreateLabelMapFromProbabilityMaps
 set(DIRTYLABELS ${CMAKE_CURRENT_BINARY_DIR}/DirtyLabels.nii.gz)
 set(CLEANLABELS ${CMAKE_CURRENT_BINARY_DIR}/CleanLabels.nii.gz)
 
-ExternalData_add_test(BRAINSCreateLabelMapFromProbabilityMapsFetchData
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET}
   NAME BRAINSCreateLabelMapFromProbabilityMapsTest
   COMMAND $<TARGET_FILE:BRAINSCreateLabelMapFromProbabilityMapsTestDriver>
   --compare ${DIRTYLABELS} DATA{${TestData_DIR}/BRAINSCreateLabelMapFromProbabilityMaps/DirtyLabels.nii.gz}
@@ -31,4 +31,3 @@ ExternalData_add_test(BRAINSCreateLabelMapFromProbabilityMapsFetchData
   --dirtyLabelVolume ${DIRTYLABELS}
   --cleanLabelVolume ${CLEANLABELS}
 )
-ExternalData_Add_Target( BRAINSCreateLabelMapFromProbabilityMapsFetchData )

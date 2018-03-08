@@ -51,7 +51,7 @@ set_target_properties(gtractCoregBvaluesTests PROPERTIES FOLDER ${MODULE_FOLDER}
 ##       The use of this program seems to be deprecated, since DTIPrep is
 ##       used for coregistration and eddy current correction.
 #set(GTRACTTestName gtractCoregBvalues_Test)
-#ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+#ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
 #  COMMAND ${LAUNCH_EXE} $<TARGET_FILE:gtractCoregBvaluesTests>
 #    --compare DATA{${DWIBASELINE_DIR}/SiemensTrio-Syngo2004A-1.nrrd}
 #              ${CMAKE_CURRENT_BINARY_DIR}/${GTRACTTestName}.test.nrrd
@@ -76,7 +76,7 @@ set_target_properties(gtractAverageBvaluesTests PROPERTIES RUNTIME_OUTPUT_DIRECT
 set_target_properties(gtractAverageBvaluesTests PROPERTIES FOLDER ${MODULE_FOLDER})
 
 set(GTRACTTestName GTRACTTest_gtractAverageBvalues)
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} $<TARGET_FILE:gtractAverageBvaluesTests>
   --compare DATA{${TestData_DIR}/${GTRACTTestName}.standard.nrrd}
             ${CMAKE_CURRENT_BINARY_DIR}/${GTRACTTestName}.test.nrrd
@@ -96,7 +96,7 @@ set_target_properties(gtractConcatDwiTests PROPERTIES RUNTIME_OUTPUT_DIRECTORY $
 set_target_properties(gtractConcatDwiTests PROPERTIES FOLDER ${MODULE_FOLDER})
 
 set(GTRACTTestName GTRACTTest_gtractConcatDwi)
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} $<TARGET_FILE:gtractConcatDwiTests>
   --compare DATA{${TestData_DIR}/${GTRACTTestName}.standard.nrrd}
             ${CMAKE_CURRENT_BINARY_DIR}/${GTRACTTestName}.test.nrrd
@@ -147,7 +147,7 @@ set_target_properties(gtractResampleDWIInPlaceTests PROPERTIES RUNTIME_OUTPUT_DI
 set_target_properties(gtractResampleDWIInPlaceTests PROPERTIES FOLDER ${MODULE_FOLDER})
 
 set(GTRACTTestName GTRACTTest_gtractResampleDWIInPlace)
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} $<TARGET_FILE:gtractResampleDWIInPlaceTests>
     --compare DATA{${TestData_DIR}/${GTRACTTestName}.standard.nrrd}
               ${CMAKE_CURRENT_BINARY_DIR}/${GTRACTTestName}.test.nrrd
@@ -174,7 +174,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/compareTwoCSVFiles.py.in ${CMAKE_CURR
 # created by ditestim.
 
 set(GTRACTTestName GTRACTTest_gtractResampleDWIInPlace_Rot15z)
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} $<TARGET_FILE:gtractResampleDWIInPlaceTests>
     --compare DATA{${TestData_DIR}/${GTRACTTestName}.standard.nrrd}
               ${CMAKE_CURRENT_BINARY_DIR}/${GTRACTTestName}.test.nrrd
@@ -190,7 +190,7 @@ ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
 
 set(PARENT_TEST GTRACTTest_gtractResampleDWIInPlace_Rot15z)
 set(GTRACTTestName chk_${PARENT_TEST})
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} python compareTwoCSVFiles.py
     --csvReferenceFile DATA{${TestData_DIR}/${GTRACTTestName}_metaData.standard.csv}
     --csvInputFile ${CMAKE_CURRENT_BINARY_DIR}/${PARENT_TEST}_metaData.test.csv
@@ -198,7 +198,7 @@ ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
 set_property(TEST ${GTRACTTestName} APPEND PROPERTY DEPENDS ${PARENT_TEST})
 
 set(GTRACTTestName GTRACTTest_gtractResampleDWIInPlace_Rot-15z)
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} $<TARGET_FILE:gtractResampleDWIInPlaceTests>
     --compare DATA{${TestData_DIR}/${GTRACTTestName}.standard.nrrd}
               ${CMAKE_CURRENT_BINARY_DIR}/${GTRACTTestName}.test.nrrd
@@ -214,7 +214,7 @@ ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
 
 set(PARENT_TEST GTRACTTest_gtractResampleDWIInPlace_Rot-15z)
 set(GTRACTTestName chk_${PARENT_TEST})
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} python compareTwoCSVFiles.py
     --csvReferenceFile DATA{${TestData_DIR}/${GTRACTTestName}_metaData.standard.csv}
     --csvInputFile ${CMAKE_CURRENT_BINARY_DIR}/${PARENT_TEST}_metaData.test.csv
@@ -222,7 +222,7 @@ ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
 set_property(TEST ${GTRACTTestName} APPEND PROPERTY DEPENDS ${PARENT_TEST})
 
 set(GTRACTTestName GTRACTTest_gtractResampleDWIInPlace_Rot45z)
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} $<TARGET_FILE:gtractResampleDWIInPlaceTests>
     --compare DATA{${TestData_DIR}/${GTRACTTestName}.standard.nrrd}
               ${CMAKE_CURRENT_BINARY_DIR}/${GTRACTTestName}.test.nrrd
@@ -238,7 +238,7 @@ ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
 
 set(PARENT_TEST GTRACTTest_gtractResampleDWIInPlace_Rot45z)
 set(GTRACTTestName chk_${PARENT_TEST})
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} python compareTwoCSVFiles.py
     --csvReferenceFile DATA{${TestData_DIR}/${GTRACTTestName}_metaData.standard.csv}
     --csvInputFile ${CMAKE_CURRENT_BINARY_DIR}/${PARENT_TEST}_metaData.test.csv
@@ -246,7 +246,7 @@ ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
 set_property(TEST ${GTRACTTestName} APPEND PROPERTY DEPENDS ${PARENT_TEST})
 
 set(GTRACTTestName GTRACTTest_gtractResampleDWIInPlace_Rot30x)
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} $<TARGET_FILE:gtractResampleDWIInPlaceTests>
     --compare DATA{${TestData_DIR}/${GTRACTTestName}.standard.nrrd}
               ${CMAKE_CURRENT_BINARY_DIR}/${GTRACTTestName}.test.nrrd
@@ -262,7 +262,7 @@ ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
 
 set(PARENT_TEST GTRACTTest_gtractResampleDWIInPlace_Rot30x)
 set(GTRACTTestName chk_${PARENT_TEST})
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} python compareTwoCSVFiles.py
     --csvReferenceFile DATA{${TestData_DIR}/${GTRACTTestName}_metaData.standard.csv}
     --csvInputFile ${CMAKE_CURRENT_BINARY_DIR}/${PARENT_TEST}_metaData.test.csv
@@ -270,7 +270,7 @@ ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
 set_property(TEST ${GTRACTTestName} APPEND PROPERTY DEPENDS ${PARENT_TEST})
 
 set(GTRACTTestName GTRACTTest_gtractResampleDWIInPlace_Rot30y)
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} $<TARGET_FILE:gtractResampleDWIInPlaceTests>
     --compare DATA{${TestData_DIR}/${GTRACTTestName}.standard.nrrd}
               ${CMAKE_CURRENT_BINARY_DIR}/${GTRACTTestName}.test.nrrd
@@ -286,12 +286,9 @@ ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
 
 set(PARENT_TEST GTRACTTest_gtractResampleDWIInPlace_Rot30y)
 set(GTRACTTestName chk_${PARENT_TEST})
-ExternalData_add_test(${PROJECT_NAME}FetchData NAME ${GTRACTTestName}
+ExternalData_add_test( ${BRAINSTools_ExternalData_DATA_MANAGEMENT_TARGET} NAME ${GTRACTTestName}
   COMMAND ${LAUNCH_EXE} python compareTwoCSVFiles.py
     --csvReferenceFile DATA{${TestData_DIR}/${GTRACTTestName}_metaData.standard.csv}
     --csvInputFile ${CMAKE_CURRENT_BINARY_DIR}/${PARENT_TEST}_metaData.test.csv
 )
 set_property(TEST ${GTRACTTestName} APPEND PROPERTY DEPENDS ${PARENT_TEST})
-
-
-ExternalData_Add_Target( ${PROJECT_NAME}FetchData )
