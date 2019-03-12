@@ -12,7 +12,7 @@ official repository.
 What is the branch naming convention ?
 --------------------------------------
 
-Each branch is named following the pattern `slicer-vY.Y.Z-YYYY-MM-DD-SHA{7}`
+Each branch is named following the pattern `slicer-YYYY-MM-DD-vY.Y.Z-SHA{7}`
 
 where:
 
@@ -35,7 +35,7 @@ git remote add upstream git://github.com/BRAINSia/BRAINSTools
 git fetch upstream
 ```
 
-2. Create a new branch following the convention `slicer-vY.Y.Z-YYYY-MM-DD-SHA{7}`
+2. Create a new branch following the convention `slicer-YYYY-MM-DD-vY.Y.Z-SHA{7}`
 
 3. Cherry-pick the Slicer specific commits from last branch. Resolve conflict as needed.
 
